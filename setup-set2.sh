@@ -8,7 +8,7 @@
 
 BASE=/srv/hotel
 LAB_USERS="malee ratree joy tom praew hotelbak"
-LAB_GROUPS="housekep housekeep frontdesk supervisors"
+LAB_GROUPS="boking booking frontdesk supervisors"
 LAB_GIDS="7999 7001 7002 7003"
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -48,8 +48,8 @@ setup_lab() {
     done
 
     set -e
-    groupadd -g 7999 housekep
-    useradd -m -s /bin/bash -c 'Malee Suksan' -G housekep malee
+    groupadd -g 7999 boking
+    useradd -m -s /bin/bash -c 'Malee Suksan' -G boking malee
     useradd -m -s /bin/bash -c 'Ratree Boonmee' ratree
     printf '%s:Hotel@2026\n' malee ratree | chpasswd
     mkdir -p "$BASE"
